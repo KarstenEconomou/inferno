@@ -1,0 +1,303 @@
+/* Title, track selection and records. Every menu is a column of identical
+   rows, so the cursor, the pointer and the controller find the same targets
+   and the caret always sits in the same place. */
+.menu-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  /* The shorthand resets all four widths, so the registration edge every
+     other button inherits has to be restated here. */
+  border: 1px solid var(--structure);
+  border-left-width: 4px;
+  min-height: 42px;
+  margin-bottom: 6px;
+  padding: 9px 14px;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+/* The cursor caret. It is drawn, not written, so it never reaches the
+   accessible name of the row it marks. */
+.menu-row::before,
+.circuit-option::before {
+  content: "";
+  flex: none;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-left-color: currentColor;
+  visibility: hidden;
+}
+.menu-row:focus::before,
+.circuit-option:focus::before,
+.circuit-option.selected::before {
+  visibility: visible;
+}
+.menu-row:disabled {
+  color: var(--structure);
+  border-color: var(--structure);
+}
+.row-label {
+  flex: 1;
+}
+.row-value {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+/* Title screen: the wordmark and the three ways in, with the standing record
+   of this browser beside them. */
+.title-screen .screen-head {
+  border-bottom-width: 1px;
+}
+.title-body {
+  display: grid;
+  grid-template-columns: minmax(0, 620px) minmax(200px, 280px);
+  justify-content: start;
+  align-content: center;
+  gap: clamp(20px, 4vw, 56px);
+}
+.hero {
+  max-width: 760px;
+}
+.hero h1 {
+  color: var(--signal);
+}
+.hero .menu {
+  max-width: 360px;
+  margin-top: 26px;
+}
+.hero .detail-line {
+  margin-top: 14px;
+  max-width: 360px;
+}
+.title-side {
+  border-left: 2px solid var(--structure);
+  padding-left: clamp(14px, 2vw, 26px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Circuit list. One column of rows, so a vertical press stays in the list and
+   a horizontal press crosses to the sheet beside it. */
+.tracks-body {
+  display: grid;
+  grid-template-columns: minmax(212px, 23%) minmax(0, 1fr) minmax(0, 24%);
+  gap: clamp(14px, 2.4vw, 32px);
+  align-items: stretch;
+}
+.circuit-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: 2px solid var(--structure);
+  padding-right: clamp(10px, 1.4vw, 18px);
+}
+.list-title {
+  margin-bottom: 6px;
+}
+.circuit-option {
+  display: grid;
+  grid-template-columns: 10px 20px 1fr;
+  align-items: center;
+  gap: 4px 9px;
+  min-height: 38px;
+  padding: 6px 9px;
+  text-align: left;
+}
+.circuit-option .mono {
+  font-size: var(--data-small);
+}
+.circuit-option strong {
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+.circuit-option small {
+  grid-column: 3;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+/* A row that the cursor holds prints in one ink throughout, so the state of
+   the circuit is read from the row and not from a second colour inside it. */
+.circuit-option:not(:focus):not(.selected) small {
+  color: var(--structure);
+}
+
+/* Course sheet. */
+.track-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+/* The plates sit at the foot of the sheet, so the last thing the sheet says
+   is what the player can do about it. */
+.track-action {
+  margin-top: auto;
+  padding-top: 14px;
+}
+.track-copy h1 {
+  font-size: clamp(38px, 5.2vw, 82px);
+  margin: 0 0 6px;
+  color: var(--signal);
+}
+.track-tagline {
+  font-size: clamp(16px, 1.7vw, 24px);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--structure);
+}
+/* One plate with two states, framed the way every control in the interface
+   is framed: a thin structure border, a registration edge down its left, and
+   a signal fill only when the course behind it actually exists. */
+.track-status {
+  font-size: var(--data-mid);
+  letter-spacing: 0.12em;
+  margin: 0 0 14px;
+  padding: 4px 9px;
+  display: inline-block;
+  border: 1px solid var(--structure);
+  border-left-width: 4px;
+  color: var(--structure);
+}
+.track-status.ready {
+  background: var(--signal);
+  color: var(--field);
+  border-color: var(--signal);
+  border-left-color: var(--field);
+}
+.card-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(14px, 2vw, 30px);
+}
+.card-columns .block + .block {
+  margin-top: 0;
+}
+/* Two paired columns stand apart from the pair above them by the same step a
+   single block would use. */
+.card-columns + .card-columns {
+  margin-top: 16px;
+}
+.track-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 260px;
+}
+.track-action-buttons .menu-row {
+  margin-bottom: 0;
+}
+
+/* Named parts of a circuit, printed as separate marks rather than as one
+   run-on line, so each one can be read on its own. */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.chip {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  border: 1px solid var(--structure);
+  border-left-width: 3px;
+  white-space: nowrap;
+}
+
+/* The plan of the course. */
+.track-graphic {
+  border-left: 2px solid var(--structure);
+  padding-left: clamp(10px, 1.4vw, 18px);
+  color: var(--structure);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* A circuit with no drawing keeps its column, so the sheet beside it does not
+   change width as the cursor steps down the list, but it prints no rule. */
+.track-graphic:empty {
+  border-left: 0;
+}
+.track-graphic .course-map {
+  height: clamp(150px, 26vh, 260px);
+}
+/* Course outline, shared by the selection sheet and the pause plan. */
+.course-map {
+  width: 100%;
+  height: 130px;
+}
+.course-map path {
+  fill: none;
+  stroke: var(--signal);
+  stroke-width: 3;
+}
+/* Gates on the sheet: the timing line filled, every checkpoint left open, so
+   the drawing says how many splits the lap is divided into. */
+.course-map .map-gate {
+  r: 4;
+  fill: var(--field);
+  stroke: var(--signal);
+  stroke-width: 2;
+}
+.course-map .map-start {
+  fill: var(--signal);
+}
+.track-graphic path {
+  stroke: var(--structure);
+  stroke-width: 5;
+}
+.plan-map path {
+  stroke: var(--structure);
+  stroke-width: 4;
+}
+/* The same outline, drawn for a corner of the road view: no fill, a heavier
+   line so it survives at that size, larger marks, and the signal ink, because
+   the city it is read against is printed in structure. */
+.hud-map path {
+  fill: none;
+  stroke: var(--signal);
+  stroke-width: 6;
+}
+.hud-map .map-gate {
+  r: 5;
+}
+.hud-map #map-marker {
+  stroke-width: 2;
+}
+.plan-map .map-gate {
+  fill: var(--field);
+  stroke: var(--signal);
+}
+.plan-map .map-gate.done {
+  fill: var(--signal);
+  stroke: var(--signal);
+}
+.plan-map #map-marker {
+  fill: var(--signal);
+  stroke: var(--field);
+  stroke-width: 1;
+}
+
+/* Timing sheet. */
+.records-body {
+  display: flex;
+  flex-direction: column;
+  max-width: 1180px;
+}
+.records-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(18px, 3vw, 48px);
+  align-content: start;
+}
+.records-action {
+  margin-top: auto;
+  padding-top: 18px;
+  max-width: 260px;
+}

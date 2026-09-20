@@ -1,0 +1,32 @@
+/* The three printing inks, the type families and the two layout variables
+   that the head-up display writes at run time. Everything else derives from
+   these values, so a circuit changes its colours in one place. */
+:root {
+  --field: #0f008f;
+  --structure: #e13d19;
+  --signal: #98fe42;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --label: "Barlow Condensed", sans-serif;
+  --data: "IBM Plex Mono", monospace;
+  /* The data face sits optically smaller than the condensed label face at the
+     same size, so its three steps are set a point above the labels beside
+     them. Every monospaced readout in the interface uses one of the three. */
+  --data-size: 13px;
+  --data-mid: 12px;
+  --data-small: 11px;
+  --safe: 24px;
+  --hud-scale: 1;
+  --gutter: clamp(18px, 3.4vw, 46px);
+  --rule: 1px solid var(--structure);
+  color: var(--signal);
+  background: var(--field);
+  font-family: var(--label);
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+}

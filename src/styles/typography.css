@@ -1,0 +1,109 @@
+/* Condensed italic display type, a labelling face and one monospaced face for
+   every number that the player reads while driving. */
+h1,
+h2 {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 900;
+  line-height: 0.87;
+  letter-spacing: -0.035em;
+}
+h1 {
+  font-size: clamp(62px, 11vw, 190px);
+  margin: 14px 0;
+}
+h2 {
+  font-size: 52px;
+  margin: 8px 0 0;
+}
+.mono,
+table,
+.time {
+  font-family: var(--data);
+  font-variant-numeric: tabular-nums;
+}
+.label,
+.eyebrow,
+.legend,
+.block-title,
+.binding-head {
+  font-family: var(--label);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.eyebrow {
+  font-size: 13px;
+  border-left: 5px solid var(--structure);
+  padding-left: 10px;
+  margin: 0;
+}
+.brand {
+  font-family: var(--display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+/* Section heads inside a screen or a panel. They label a block of data, so
+   they stay small and upright against the italic display type. */
+.block-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  margin: 0 0 8px;
+  padding-bottom: 5px;
+  border-bottom: var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--structure);
+}
+.block-title b {
+  font-size: var(--data-small);
+  color: var(--signal);
+}
+.subtext,
+.card-note {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--structure);
+  margin: 8px 0 0;
+}
+/* One line of copy for whatever the cursor holds. It keeps its height when it
+   is empty, so nothing below it moves as the cursor travels. */
+.detail-line {
+  position: relative;
+  font-size: 15px;
+  line-height: 1.45;
+  min-height: 2.6em;
+  margin: 10px 0 0;
+  padding-left: 13px;
+  color: var(--structure);
+}
+.detail-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 1.45em;
+  background: var(--structure);
+}
+.key {
+  font-family: var(--data);
+  font-size: var(--data-small);
+  border: 1px solid var(--structure);
+  padding: 2px 5px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.ahead {
+  color: var(--signal);
+}
+.behind {
+  color: var(--structure);
+}

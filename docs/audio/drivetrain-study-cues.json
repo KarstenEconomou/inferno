@@ -1,0 +1,58 @@
+[
+  {
+    "event": "idle",
+    "seconds": 0.00009999990463256836
+  },
+  {
+    "event": "throttle / accelerate",
+    "seconds": 1.0025999999046327
+  },
+  {
+    "event": "hold",
+    "seconds": 4.243
+  },
+  {
+    "event": "lift / coast",
+    "seconds": 7.046099999904633
+  },
+  {
+    "event": "reapply",
+    "seconds": 8.548399999856949
+  },
+  {
+    "event": "airborne",
+    "seconds": 9.552799999952317
+  },
+  {
+    "event": "contact restored",
+    "seconds": 10.5535
+  },
+  {
+    "event": "boost load",
+    "seconds": 11.5545
+  },
+  {
+    "event": "lift",
+    "seconds": 12.555399999856949
+  },
+  {
+    "event": "wall approach",
+    "seconds": 13.556299999952316
+  },
+  {
+    "event": "head-on impact / held throttle",
+    "seconds": 14.357299999952316
+  },
+  {
+    "event": "release against wall",
+    "seconds": 15.361700000047684
+  },
+  {
+    "event": "glancing contact / retained momentum",
+    "seconds": 16.064599999904633
+  },
+  {
+    "event": "contact ends",
+    "seconds": 17.068700000047684
+  }
+]

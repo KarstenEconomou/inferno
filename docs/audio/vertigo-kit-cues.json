@@ -1,0 +1,107 @@
+{
+  "theme": "vertigo",
+  "harmony": "G♯ minor",
+  "previewGain": 4.447271865206746,
+  "cues": [
+    {
+      "seconds": 0,
+      "event": "race.start"
+    },
+    {
+      "seconds": 0.74,
+      "event": "race.restart"
+    },
+    {
+      "seconds": 1.26,
+      "event": "race.respawn"
+    },
+    {
+      "seconds": 1.88,
+      "event": "race.finish"
+    },
+    {
+      "seconds": 2.65,
+      "event": "race.pb"
+    },
+    {
+      "seconds": 4.945,
+      "event": "race.invalid"
+    },
+    {
+      "seconds": 5.605,
+      "event": "race.count.3"
+    },
+    {
+      "seconds": 6.145,
+      "event": "race.count.2"
+    },
+    {
+      "seconds": 6.705,
+      "event": "race.count.1"
+    },
+    {
+      "seconds": 7.305,
+      "event": "checkpoint.hit"
+    },
+    {
+      "seconds": 7.785,
+      "event": "checkpoint.ahead"
+    },
+    {
+      "seconds": 8.392,
+      "event": "checkpoint.behind"
+    },
+    {
+      "seconds": 8.932,
+      "event": "vehicle.boost.enter"
+    },
+    {
+      "seconds": 9.582,
+      "event": "vehicle.boost.loop"
+    },
+    {
+      "seconds": 10.237,
+      "event": "vehicle.boost.exit"
+    },
+    {
+      "seconds": 10.891,
+      "event": "vehicle.jump"
+    },
+    {
+      "seconds": 11.471,
+      "event": "vehicle.land"
+    },
+    {
+      "seconds": 12.131,
+      "event": "vehicle.scrape"
+    },
+    {
+      "seconds": 12.626,
+      "event": "vehicle.impact"
+    },
+    {
+      "seconds": 13.226,
+      "event": "ui.move"
+    },
+    {
+      "seconds": 13.678,
+      "event": "ui.confirm"
+    },
+    {
+      "seconds": 14.238,
+      "event": "ui.back"
+    },
+    {
+      "seconds": 14.758,
+      "event": "ui.denied"
+    },
+    {
+      "seconds": 15.223,
+      "event": "ui.panel"
+    },
+    {
+      "seconds": 15.688,
+      "event": "environment.pulse"
+    }
+  ]
+}

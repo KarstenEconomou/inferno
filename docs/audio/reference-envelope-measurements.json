@@ -1,0 +1,27 @@
+{
+  "seconds": [
+    35,
+    55
+  ],
+  "caveat": "Mixed program, overlapping instruments; descriptive aggregate only, not sample reconstruction.",
+  "bands": {
+    "field": {
+      "side_to_mid_db": -36.82,
+      "transients": 115,
+      "median_10_90_attack_ms": 18.0,
+      "median_peak_to_20_percent_ms": 194.0
+    },
+    "structure": {
+      "side_to_mid_db": -14.57,
+      "transients": 109,
+      "median_10_90_attack_ms": 7.0,
+      "median_peak_to_20_percent_ms": 69.0
+    },
+    "signal": {
+      "side_to_mid_db": -9.39,
+      "transients": 140,
+      "median_10_90_attack_ms": 6.0,
+      "median_peak_to_20_percent_ms": 24.0
+    }
+  }
+}

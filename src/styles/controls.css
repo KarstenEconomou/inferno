@@ -1,0 +1,121 @@
+/* Flat printed controls: a complete frame, a heavy registration edge, and
+   immediate inversion under the cursor. The cursor inverts on focus, not only
+   on keyboard focus, because a console menu always shows where it stands. The
+   native range and checkbox use the same three inks, so no platform grey
+   appears anywhere in the interface. */
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+select,
+input {
+  accent-color: var(--signal);
+}
+button,
+select {
+  color: var(--signal);
+  background: var(--field);
+  border: 1px solid var(--structure);
+  border-radius: 0;
+}
+button {
+  cursor: pointer;
+  border-left-width: 4px;
+  padding: 9px 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+button:disabled {
+  cursor: default;
+  color: var(--structure);
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+button:focus,
+button.selected,
+.selected {
+  border-color: var(--signal);
+  /* The heavy registration edge survives the inversion by changing ink
+     rather than disappearing into the fill behind it. */
+  border-left-color: var(--field);
+  background: var(--signal);
+  color: var(--field);
+}
+/* The pointer only offers a row; the cursor is what stands on it. Two
+   different marks mean the player never sees two selected rows at once. */
+button:hover:not(:focus):not(:disabled) {
+  border-color: var(--signal);
+}
+button:active {
+  background: var(--structure);
+  border-color: var(--structure);
+  color: var(--field);
+}
+/* A binding row waiting for a key keeps the structure ink, so the player can
+   see at a glance which cell is listening. */
+button.capturing,
+button.capturing:hover {
+  background: var(--structure);
+  border-color: var(--structure);
+  color: var(--field);
+}
+/* The travel already covered is printed in, so the value is readable from
+   the shape of the row and not only from the number beside it. */
+input[type="range"] {
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    var(--structure) var(--fill, 0%),
+    var(--field) var(--fill, 0%)
+  );
+  border: 1px solid var(--structure);
+  height: 12px;
+  width: 150px;
+  border-radius: 0;
+  padding: 0 1px;
+}
+input[type="range"]:focus {
+  border-color: var(--signal);
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 8px;
+  background: var(--signal);
+  border: 0;
+  border-radius: 0;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 8px;
+  background: var(--signal);
+  border: 0;
+  border-radius: 0;
+}
+input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--field);
+  border: 1px solid var(--structure);
+  border-radius: 0;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+input[type="checkbox"]:focus {
+  border-color: var(--signal);
+}
+input[type="checkbox"]:checked {
+  background: var(--signal);
+  border-color: var(--signal);
+}
+select {
+  padding: 5px 7px;
+}

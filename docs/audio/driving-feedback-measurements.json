@@ -1,0 +1,93 @@
+{
+  "source": "Chrome MediaStreamDestination, default vehicle and gameplay mix; stereo overall, arithmetic mono average for spectral segments",
+  "rate": 48000,
+  "duration": 12.36,
+  "all_finite": true,
+  "clipped_samples": 0,
+  "overall": {
+    "peak_dbfs": -16.59,
+    "rms_dbfs": -34.75
+  },
+  "segments": {
+    "low": {
+      "start_seconds": 0.4,
+      "end_seconds": 1.1,
+      "peak_dbfs": -29.02,
+      "rms_dbfs": -33.82,
+      "below_600hz_rms_dbfs": -33.86,
+      "above_1500hz_rms_dbfs": -61.13
+    },
+    "high": {
+      "start_seconds": 3.59,
+      "end_seconds": 4.39,
+      "peak_dbfs": -28.98,
+      "rms_dbfs": -35.49,
+      "below_600hz_rms_dbfs": -35.55,
+      "above_1500hz_rms_dbfs": -60.17
+    },
+    "boost_attack": {
+      "start_seconds": 4.716,
+      "end_seconds": 4.941,
+      "peak_dbfs": -16.81,
+      "rms_dbfs": -24.36,
+      "below_600hz_rms_dbfs": -24.4,
+      "above_1500hz_rms_dbfs": -47.27
+    },
+    "boost_sustain": {
+      "start_seconds": 5.191,
+      "end_seconds": 5.491,
+      "peak_dbfs": -26.26,
+      "rms_dbfs": -33.26,
+      "below_600hz_rms_dbfs": -33.38,
+      "above_1500hz_rms_dbfs": -54.86
+    },
+    "brake": {
+      "start_seconds": 7.202,
+      "end_seconds": 7.452,
+      "peak_dbfs": -30.65,
+      "rms_dbfs": -41.82,
+      "below_600hz_rms_dbfs": -48.93,
+      "above_1500hz_rms_dbfs": -44.88
+    },
+    "drive": {
+      "start_seconds": 7.857,
+      "end_seconds": 8.258,
+      "peak_dbfs": -28.32,
+      "rms_dbfs": -35.51,
+      "below_600hz_rms_dbfs": -35.57,
+      "above_1500hz_rms_dbfs": -60.29
+    },
+    "drift": {
+      "start_seconds": 8.759,
+      "end_seconds": 9.559,
+      "peak_dbfs": -27.08,
+      "rms_dbfs": -35.73,
+      "below_600hz_rms_dbfs": -35.95,
+      "above_1500hz_rms_dbfs": -50.77
+    },
+    "recovery": {
+      "start_seconds": 10.761,
+      "end_seconds": 10.961,
+      "peak_dbfs": -28.24,
+      "rms_dbfs": -35.3,
+      "below_600hz_rms_dbfs": -35.37,
+      "above_1500hz_rms_dbfs": -60.52
+    },
+    "stop": {
+      "start_seconds": 11.307,
+      "end_seconds": 11.507,
+      "peak_dbfs": -45.15,
+      "rms_dbfs": -52.68,
+      "below_600hz_rms_dbfs": -52.67,
+      "above_1500hz_rms_dbfs": -103.57
+    },
+    "air": {
+      "start_seconds": 11.91,
+      "end_seconds": 12.11,
+      "peak_dbfs": -59.27,
+      "rms_dbfs": -66.59,
+      "below_600hz_rms_dbfs": -66.62,
+      "above_1500hz_rms_dbfs": -99.83
+    }
+  }
+}

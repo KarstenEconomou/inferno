@@ -1,0 +1,668 @@
+# Inferno Circuit Implementation Skill
+
+Implement a new **Inferno** circuit from the supplied map specification.
+
+The supplied specification defines the circuit's:
+
+- name;
+- three-color palette;
+- environment and thematic identity;
+- track identity;
+- approximate course structure;
+- sector design;
+- signature features;
+- intended optimization problems;
+- authored shortcuts or advanced lines, if any.
+
+Treat that specification as the design contract for the map.
+
+Use the existing **Vertigo Works** circuit as the implementation reference for rendering, systems integration, track construction, and overall level of abstraction.
+
+---
+
+## Objective
+
+Create a deterministic, learnable time-trial circuit that:
+
+1. faithfully implements the supplied map specification;
+2. belongs unmistakably to the same game as Vertigo Works;
+3. has a mechanically distinct driving identity;
+4. rewards repeated optimization;
+5. reuses existing Inferno systems and abstractions rather than creating a bespoke implementation.
+
+The circuit should create meaningful differences between a competent lap and an optimized lap through some combination of:
+
+- braking points;
+- racing-line choice;
+- steering precision;
+- boost alignment;
+- jump setup;
+- landing angle;
+- elevation;
+- banking;
+- momentum preservation;
+- intentional advanced routes.
+
+Do not add mechanics merely to make the circuit more complicated.
+
+---
+
+# 1. Inspect Vertigo Works first
+
+Before implementing the new map, inspect the existing **Vertigo Works** implementation.
+
+Identify the existing abstractions and conventions for:
+
+- map and track representation;
+- scene organization;
+- procedural or authored environment generation;
+- palette configuration;
+- shaders;
+- dithering and stippling;
+- fog;
+- outlines;
+- track materials;
+- road geometry;
+- banked corners;
+- elevated sections;
+- ramps and jumps;
+- boost pads or boost strips;
+- checkpoints;
+- reset volumes;
+- collision;
+- out-of-bounds detection;
+- lap timing;
+- PB tracking;
+- ghost recording and playback;
+- map registration;
+- map selection;
+- minimap/course metadata;
+- start/finish handling.
+
+Reuse these mechanisms wherever possible.
+
+Do not build parallel systems for functionality that Vertigo Works already implements.
+
+If several maps would benefit from a reusable geometric or environment primitive, factor that primitive cleanly rather than embedding it exclusively inside the new map.
+
+Useful shared primitives may include:
+
+- straight track segments;
+- spline or curved track segments;
+- banked corners;
+- elevation transitions;
+- elevated roads;
+- ramps;
+- landing zones;
+- boost strips;
+- checkpoint gates;
+- reset zones;
+- tunnels;
+- bridges;
+- towers;
+- gantries;
+- large background structures;
+- palette definitions.
+
+Avoid substantial refactoring of unrelated game systems.
+
+---
+
+# 2. Preserve Inferno's visual grammar
+
+Vertigo Works establishes the game's visual grammar.
+
+The new map must preserve it.
+
+## Three-color constraint
+
+Render the entire world using **exactly the three colors specified by the map specification**.
+
+Quantize all visible content into those colors, including:
+
+- track;
+- terrain;
+- sky;
+- background;
+- architecture;
+- vehicles;
+- signage;
+- markings;
+- lights;
+- effects;
+- particles;
+- environmental props;
+- fog treatment where applicable.
+
+Do not introduce:
+
+- additional neutral colors;
+- conventional white or black unless explicitly one of the three supplied colors;
+- realistic material colors;
+- lighting-derived intermediate colors;
+- gradients between palette colors.
+
+The map specification's palette is authoritative.
+
+---
+
+## Palette roles
+
+Unless the map specification explicitly requires otherwise, interpret the three tones approximately as:
+
+**Tone 1 — Field**
+
+Used primarily for:
+
+- sky;
+- deep shadow;
+- distant surfaces;
+- negative space;
+- dominant background masses.
+
+**Tone 2 — Structure**
+
+Used primarily for:
+
+- architecture;
+- terrain;
+- major environmental masses;
+- track/environment differentiation.
+
+**Tone 3 — Signal**
+
+Used more selectively for:
+
+- boost surfaces;
+- lights;
+- racing-critical cues;
+- signage;
+- high-energy accents;
+- important visual landmarks.
+
+Do not distribute all three colors uniformly.
+
+Preserve deliberate hierarchy.
+
+---
+
+## Rendering
+
+Match Vertigo Works' existing implementation for:
+
+- shader behavior;
+- hard color quantization;
+- dithering;
+- stippling;
+- fog;
+- outlines;
+- boost effects;
+- surface readability;
+- geometric abstraction;
+- perspective treatment.
+
+Favor:
+
+- large silhouettes;
+- hard contrast;
+- exaggerated scale;
+- aggressive perspective;
+- simple geometric forms;
+- graphic rather than realistic representations of infrastructure.
+
+The environment should read as an abstraction of its subject, not a simulation of it.
+
+Every circuit should feel like another record sleeve from the same visual series.
+
+---
+
+# 3. Treat the map specification as geometry guidance, not merely theme
+
+The supplied specification describes a particular **driving identity**.
+
+Track geometry must express that identity.
+
+Do not implement the environment first and then fit an arbitrary road through it.
+
+Translate the specified mastery directly into course geometry.
+
+For example:
+
+- **momentum** → long linked sections where one exit affects subsequent corners;
+- **verticality** → meaningful elevation change, climbing and descending lines;
+- **braking precision** → high-speed approaches with stable environmental braking references;
+- **flow** → long-radius linked corners with few discrete braking events;
+- **line discovery** → authored alternate surfaces or routes that reward experimentation;
+- **jump optimization** → variable but deterministic landing distance and orientation;
+- **high-speed placement** → narrow alignment targets at sustained velocity.
+
+The map's mechanical identity should be recognizable within its first several corners.
+
+---
+
+# 4. Time-trial design requirements
+
+The game is primarily a **time-trial racer**.
+
+Everything affecting lap time must therefore be deterministic.
+
+## Required compatibility
+
+The new circuit must support the same systems as Vertigo Works:
+
+- lap timing;
+- checkpoints;
+- resets;
+- ghost recording;
+- ghost playback;
+- PB tracking;
+- boost;
+- jumps;
+- collision;
+- out-of-bounds behavior;
+- map selection.
+
+Do not weaken existing functionality to accommodate the map.
+
+---
+
+## Determinism
+
+Do not introduce RNG into anything that can affect lap time.
+
+Prohibited examples include:
+
+- randomized obstacle placement;
+- random terrain deformation;
+- variable jump behavior;
+- stochastic boost behavior;
+- unpredictable moving barriers;
+- traffic crossing the racing line;
+- physics-driven scenery capable of entering the course.
+
+Moving environmental elements may exist if:
+
+- purely cosmetic; or
+- their motion is perfectly deterministic and cannot create run-to-run variation.
+
+Repeated entry conditions should produce repeated outcomes.
+
+This is particularly important for jumps.
+
+---
+
+# 5. Design a small number of meaningful optimization problems
+
+Do not fill the circuit with constant gimmicks.
+
+Prefer approximately **3–5 major optimization problems** across a normal map, or the number implied by the supplied specification.
+
+Examples:
+
+- carrying minimum steering scrub through a sequence;
+- choosing an exact braking reference;
+- chaining narrow boost strips;
+- positioning for a narrow bridge;
+- maximizing jump entry speed;
+- optimizing landing angle;
+- using banking correctly;
+- opening a corner to maximize downstream speed;
+- discovering a faster authored terrain route.
+
+These problems should interact where appropriate.
+
+A strong Inferno section often has the form:
+
+`SETUP → EXECUTION → DOWNSTREAM CONSEQUENCE`
+
+For example:
+
+`CORNER EXIT → JUMP → LANDING ANGLE → NEXT CORNER`
+
+rather than:
+
+`CORNER → JUMP → CORNER`
+
+Mistakes should frequently produce measurable time loss several seconds later rather than only at the exact point where the error occurred.
+
+---
+
+# 6. Build readable racing geometry
+
+Important racing decisions should be readable from the environment.
+
+Prefer fixed references such as:
+
+- structural columns;
+- runway bars;
+- light arrays;
+- pylons;
+- gantries;
+- wall transitions;
+- tower edges;
+- terrain features;
+- architectural openings;
+- road-width changes.
+
+Avoid excessive instructional signage.
+
+Do not add giant markers such as:
+
+- `BRAKE HERE`;
+- `TURN NOW`;
+- oversized arrows covering every corner.
+
+A player should progressively learn the environment as a timing reference.
+
+Visual landmarks should therefore remain stable and spatially meaningful.
+
+---
+
+# 7. Checkpoints and boundaries
+
+Checkpoint placement must prevent unintended shortcut exploits without suppressing legitimate advanced lines.
+
+When placing checkpoints:
+
+- require the player to traverse the intended major course topology;
+- ensure large cuts cannot skip entire sectors;
+- preserve authored alternate lines;
+- preserve intentional corner cutting;
+- preserve intentional terrain exploitation described by the specification.
+
+Do not make the legal racing corridor unnecessarily narrow.
+
+Reset volumes should detect genuinely invalid runs, not punish optimization.
+
+If the supplied map specification explicitly defines an advanced shortcut, cut, jump, terrain line, or alternate route, treat it as first-class intended geometry.
+
+Checkpoint and reset logic must support it.
+
+---
+
+# 8. Jumps
+
+Every significant jump must be deterministic.
+
+Repeated:
+
+- entry position;
+- velocity;
+- heading;
+- steering input
+
+should produce approximately repeated:
+
+- trajectory;
+- distance;
+- landing position;
+- landing angle.
+
+Whenever possible, make jumps continuous optimization problems rather than binary pass/fail events.
+
+Prefer designs where different levels of execution produce outcomes such as:
+
+- short but safe landing;
+- strong landing;
+- optimal landing;
+- direct boost alignment;
+- improved setup for the next corner.
+
+The preceding sector should often determine jump quality.
+
+Landing geometry should matter.
+
+---
+
+# 9. Boost placement
+
+Boost pads or strips should reward precision rather than functioning as automatic acceleration zones.
+
+Where appropriate:
+
+- use narrow boost strips;
+- place boosts along optimal but demanding trajectories;
+- create chains that require stable steering;
+- place boosts after jumps so landing position matters;
+- use boosts to amplify a successful previous section.
+
+Avoid covering entire straights with boost unless the specification explicitly calls for it.
+
+Use the map's designated signal color according to Vertigo Works' existing rendering conventions.
+
+---
+
+# 10. Environment construction
+
+Build the environment around the thematic elements supplied in the map specification.
+
+Prioritize the major forms that establish:
+
+1. scale;
+2. spatial orientation;
+3. racing references;
+4. thematic identity.
+
+Do not interpret the environment specification as a requirement to model every listed object at high fidelity.
+
+Prefer a small number of strong silhouettes over many minor props.
+
+Background geometry should reinforce the track.
+
+Examples:
+
+- a dam wall establishes vertical scale;
+- aircraft define high-speed gates;
+- a skyscraper anchors a helix;
+- a radar dish identifies an approaching jump;
+- pylons establish alignment across an open area.
+
+Environment and racing line should be designed together.
+
+---
+
+# 11. Sector implementation
+
+Use the sector sequence in the supplied specification as the intended course topology.
+
+You may adjust:
+
+- exact distances;
+- radii;
+- elevation;
+- banking;
+- object placement;
+- transition lengths
+
+when required to make the circuit drive well.
+
+Do not casually replace or omit a specified signature feature.
+
+For every sector, determine:
+
+### Entry state
+
+What velocity, orientation, and road position does the previous sector produce?
+
+### Primary decision
+
+What is the player optimizing here?
+
+### Failure mode
+
+How does an imperfect line lose time?
+
+### Expert line
+
+What does an optimized execution look like?
+
+### Exit consequence
+
+How does execution affect the next sector?
+
+The final geometry should preserve this causal structure.
+
+---
+
+# 12. Advanced lines and shortcuts
+
+If the map specification includes intentional advanced routes, implement them deliberately.
+
+An advanced line should have:
+
+- clear geometric authorship;
+- deterministic physics;
+- a reproducible entry;
+- a meaningful execution requirement;
+- measurable time benefit;
+- real failure risk.
+
+It should not depend on:
+
+- collision bugs;
+- physics instability;
+- clipping;
+- RNG;
+- accidental gaps in reset volumes.
+
+Advanced routes should ideally form a mastery ladder.
+
+For example:
+
+**Basic**
+
+Obvious and forgiving.
+
+**Intermediate**
+
+Requires deliberate setup.
+
+**Expert**
+
+Requires precise position, speed, or orientation and produces leaderboard-relevant gains.
+
+These routes may be visually understated so that discovery remains part of mastery.
+
+---
+
+# 13. Preserve spatial legibility
+
+Even highly stylized circuits should form understandable places.
+
+Where possible:
+
+- allow players to see earlier or later portions of the course;
+- reuse major landmarks from different angles;
+- create recognizable vertical relationships;
+- let crossings reveal course topology;
+- make start/finish spatially meaningful.
+
+The player should gradually form a mental model of the circuit.
+
+Do not create an arbitrary sequence of disconnected set pieces.
+
+---
+
+# 14. Validate the completed circuit
+
+After implementation, test the map specifically as a time-trial course.
+
+Verify:
+
+### Systems
+
+- lap starts correctly;
+- lap completes correctly;
+- all checkpoints register;
+- PB updates correctly;
+- ghost recording works;
+- ghost playback follows the course correctly;
+- resets place the player safely;
+- boost pads behave consistently;
+- collision is stable;
+- out-of-bounds detection is correct.
+
+### Determinism
+
+Repeat representative:
+
+- jumps;
+- shortcuts;
+- boost chains;
+- high-speed sections
+
+from similar initial conditions.
+
+Confirm that outcomes are stable.
+
+### Shortcut integrity
+
+Attempt to:
+
+- bypass checkpoints;
+- skip sectors;
+- exploit reset boundaries;
+- cut through scenery;
+- leave and re-enter the circuit.
+
+Block unintended exploits without disabling specified advanced lines.
+
+### Track quality
+
+Confirm that:
+
+- the circuit has a distinct driving identity;
+- there are several meaningful optimization problems;
+- major corners have readable references;
+- expert execution produces noticeable but plausible gains;
+- mistakes propagate naturally into downstream time loss;
+- the route can be learned through repetition.
+
+### Visual integrity
+
+Confirm that:
+
+- exactly three palette colors are used;
+- no gradients or stray material colors appear;
+- scenery follows Vertigo Works' abstraction level;
+- dithering/fog/outlines/shaders match the existing game;
+- the signal color remains selective enough to preserve racing readability.
+
+---
+
+# 15. Implementation priorities
+
+When tradeoffs arise, use this priority order:
+
+1. **driving quality;**
+2. **determinism;**
+3. **faithfulness to the supplied mechanical identity;**
+4. **compatibility with existing Inferno systems;**
+5. **visual continuity with Vertigo Works;**
+6. **faithfulness to individual environmental details;**
+7. **decorative complexity.**
+
+Do not sacrifice track quality to reproduce a minor environmental detail.
+
+Do not sacrifice determinism for spectacle.
+
+---
+
+# 16. Definition of done
+
+The map is complete when:
+
+- the supplied sector structure and signature mechanics are represented;
+- its intended mastery is evident from the geometry;
+- it works with all existing time-trial systems;
+- its advanced lines behave intentionally;
+- lap-affecting behavior is deterministic;
+- checkpoint/reset logic survives shortcut testing;
+- exactly the supplied three-color palette is used;
+- its rendering is visually consistent with Vertigo Works;
+- it feels mechanically distinct from existing maps;
+- no unnecessary parallel systems or major unrelated refactors were introduced.
+
+The intended result is not merely a themed level.
+
+It should be a circuit that players can spend many runs progressively understanding, optimizing, and mastering.

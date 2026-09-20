@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: #0f008f;
+      }
+      canvas {
+        display: block;
+        image-rendering: pixelated;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script type="module">
+      import * as THREE from "three";
+      import { World } from "/src/render/world.ts";
+      import { Vehicle } from "/src/sim/index.ts";
+      import { circuits } from "/src/circuits.ts";
+      const world = new World(document.querySelector("canvas"));
+      // The page opens on the circuit that ?circuit= names, so a capture can
+      // walk any built course without a second harness.
+      const wanted = new URLSearchParams(location.search).get("circuit");
+      const circuit = circuits.find((c) => c.id === wanted && c.available);
+      if (circuit) world.loadCircuit(circuit);
+      window.testCircuit = (circuit ?? circuits[0]).theme;
+      const car = new Vehicle();
+      window.inspectScene = (progress, title = false, lateral = 0) => {
+        car.reset(progress);
+        car.velocity.copy(car.heading).multiplyScalar(32);
+        world.camReady = false;
+        const { frame } = window.testTrack;
+        const basis = frame(progress);
+        car.position.addScaledVector(basis.right, lateral);
+        for (let i = 0; i < 60; i++) world.render(car, 1 / 60, title, 0);
+        return renderedMetrics();
+      };
+      function renderedMetrics() {
+        const probe = document.createElement("canvas");
+        probe.width = world.renderer.domElement.width;
+        probe.height = world.renderer.domElement.height;
+        const context = probe.getContext("2d");
+        context.drawImage(world.renderer.domElement, 0, 0);
+        const pixels = context.getImageData(
+            0,
+            0,
+            probe.width,
+            probe.height,
+          ).data,
+          colors = {};
+        for (let i = 0; i < pixels.length; i += 4) {
+          const key = `${pixels[i]},${pixels[i + 1]},${pixels[i + 2]}`;
+          colors[key] = (colors[key] || 0) + 1;
+        }
+        return { ...world.lastFrameStats, colors };
+      }
+      // A free view of the country around one station: the camera stands off
+      // the road and looks back at it, which is the only way to see whether a
+      // landform reads as a landform.
+      window.inspectLand = (progress, side, back, lift) => {
+        car.reset(progress);
+        world.camReady = false;
+        world.render(car, 1 / 60, false, 0);
+        const f = window.testTrack.frame(progress);
+        world.camera.position
+          .copy(f.p)
+          .addScaledVector(f.right, side)
+          .addScaledVector(f.forward, back)
+          .add(new THREE.Vector3(0, lift, 0));
+        world.camera.up.set(0, 1, 0);
+        world.camera.lookAt(f.p);
+        world.camera.fov = 55;
+        world.camera.updateProjectionMatrix();
+        world.renderer.setRenderTarget(world.target);
+        world.renderer.render(world.scene, world.camera);
+        world.renderer.setRenderTarget(null);
+        world.renderer.render(world.postScene, world.postCamera);
+        return renderedMetrics();
+      };
+      // Deliberate close views for print treatment: the same car panels at
+      // different bank angles, independent of chase-camera framing.
+      window.inspectPrint = (bank = 0, side = 1) => {
+        car.reset(0);
+        const f = window.testTrack.frame(0);
+        car.up.applyAxisAngle(car.heading, bank);
+        world.camReady = false;
+        world.render(car, 1 / 60, false, 0);
+        world.camera.position
+          .copy(car.position)
+          .addScaledVector(f.forward, -4.8)
+          .addScaledVector(f.right, side * 3.5)
+          .addScaledVector(f.up, 2.2);
+        world.camera.up.copy(f.up);
+        world.camera.lookAt(car.position.clone().addScaledVector(f.up, 0.15));
+        world.camera.fov = 48;
+        world.camera.updateProjectionMatrix();
+        world.renderer.setRenderTarget(world.target);
+        world.renderer.render(world.scene, world.camera);
+        world.renderer.setRenderTarget(null);
+        world.renderer.render(world.postScene, world.postCamera);
+        return renderedMetrics();
+      };
+      window.inspectPrintStability = () => {
+        const visibility = world.scene.children.map((child) => child.visible);
+        world.scene.children.forEach((child) => {
+          child.visible = child === world.car;
+        });
+        const probe = document.createElement("canvas");
+        probe.width = world.renderer.domElement.width;
+        probe.height = world.renderer.domElement.height;
+        const ctx = probe.getContext("2d");
+        const images = [];
+        for (const bank of [0, 0.7]) {
+          // Rotate camera and car together. Their relative pose stays fixed,
+          // so any material change would be unwanted world-light dependence.
+          const axis = car.up.clone().set(0, 0, 1);
+          world.car.position.set(0, 0, 0);
+          world.car.quaternion.setFromAxisAngle(axis, bank);
+          world.camera.position.set(3.5, 2.2, 4.8).applyAxisAngle(axis, bank);
+          world.camera.up.set(0, 1, 0).applyAxisAngle(axis, bank);
+          world.camera.lookAt(0, 0, 0);
+          world.camera.fov = 48;
+          world.camera.updateProjectionMatrix();
+          world.renderer.setRenderTarget(world.target);
+          world.renderer.render(world.scene, world.camera);
+          world.renderer.setRenderTarget(null);
+          world.renderer.render(world.postScene, world.postCamera);
+          ctx.drawImage(world.renderer.domElement, 0, 0);
+          images.push(ctx.getImageData(0, 0, probe.width, probe.height).data);
+        }
+        let changed = 0,
+          ink = 0;
+        for (let i = 0; i < images[0].length; i += 4) {
+          if (images[0][i] !== 15 || images[1][i] !== 15) ink++;
+          if (
+            images[0][i] !== images[1][i] ||
+            images[0][i + 1] !== images[1][i + 1] ||
+            images[0][i + 2] !== images[1][i + 2]
+          )
+            changed++;
+        }
+        world.scene.children.forEach((child, i) => {
+          child.visible = visibility[i];
+        });
+        world.camReady = false;
+        return { changed, ink, changedFraction: changed / Math.max(1, ink) };
+      };
+      window.inspectLanding = (initialize = false) => {
+        if (initialize) {
+          car.reset(window.testTrack.track.gaps[0][1] + 0.001);
+          const f = window.testTrack.frame(
+            window.testTrack.track.gaps[0][1] + 0.001,
+          );
+          car.position.addScaledVector(f.up, 2);
+          car.velocity
+            .copy(f.forward)
+            .multiplyScalar(40)
+            .addScaledVector(f.up, -30);
+          car.grounded = false;
+          world.camReady = false;
+        } else
+          for (let i = 0; i < 2; i++) {
+            car.step({ throttle: 0, steer: 0, brake: false });
+            world.updateCamera(car, 1 / 120);
+          }
+        world.render(car, 1 / 60);
+        return {
+          grounded: car.grounded,
+          position: car.position.toArray(),
+          suspension: car.suspension,
+        };
+      };
+      window.inspectCity = (view) => {
+        window.inspectScene(0.37);
+        const plan = world.scene.children.find((x) => x.userData.cityPlan)
+          ?.userData.cityPlan;
+        const center = plan.bounds.getCenter(car.position.clone());
+        if (view === "overhead") {
+          world.camera.position.set(center.x, 1450, center.z);
+          world.camera.up.set(0, 0, -1);
+          world.camera.lookAt(center);
+          world.camera.fov = 74;
+        } else if (view === "undertrack") {
+          const f = window.testTrack.frame(0.37);
+          world.camera.position
+            .copy(f.p)
+            .addScaledVector(f.right, 35)
+            .addScaledVector(f.up, 18);
+          world.camera.up.set(0, 1, 0);
+          world.camera.lookAt(f.p.clone().setY(-45));
+          world.camera.fov = 72;
+        } else {
+          const angle = (Number(view) * Math.PI) / 2;
+          world.camera.position.set(center.x, 110, center.z);
+          world.camera.up.set(0, 1, 0);
+          world.camera.lookAt(
+            center.x + Math.sin(angle) * 1000,
+            10,
+            center.z + Math.cos(angle) * 1000,
+          );
+          world.camera.fov = 74;
+        }
+        world.camera.updateProjectionMatrix();
+        world.renderer.setRenderTarget(world.target);
+        world.renderer.render(world.scene, world.camera);
+        const stats = {
+          calls: world.renderer.info.render.calls,
+          triangles: world.renderer.info.render.triangles,
+        };
+        world.renderer.setRenderTarget(null);
+        world.renderer.render(world.postScene, world.postCamera);
+        return {
+          ...renderedMetrics(),
+          ...stats,
+          plots: plan.plots.length,
+          parcels: plan.parcels.length,
+          emptyParcels: plan.parcels.filter((p) => !p.built).length,
+          skyline: plan.plots.filter((p) => p.layer === "skyline").length,
+        };
+      };
+      window.inspectStructure = (kind) => {
+        const t = window.testTrack.track;
+        const sequence =
+          kind === "gallery"
+            ? t.gallery
+            : t.landmarks.find((x) => x.kind === kind);
+        const progress = sequence.start + sequence.spacing * 2;
+        window.inspectScene(progress);
+        const f = window.testTrack.frame(progress);
+        world.camera.position
+          .copy(f.p)
+          .addScaledVector(f.right, -32)
+          .addScaledVector(f.forward, -20)
+          .addScaledVector(f.up, 8);
+        world.camera.up.copy(f.up);
+        world.camera.lookAt(f.p.clone().addScaledVector(f.up, 4));
+        world.camera.fov = 58;
+        world.camera.updateProjectionMatrix();
+        world.renderer.setRenderTarget(world.target);
+        world.renderer.render(world.scene, world.camera);
+        const stats = {
+          calls: world.renderer.info.render.calls,
+          triangles: world.renderer.info.render.triangles,
+        };
+        world.renderer.setRenderTarget(null);
+        world.renderer.render(world.postScene, world.postCamera);
+        return { ...renderedMetrics(), ...stats };
+      };
+      window.testTrack = await import("/src/track/index.ts");
+      window.inspectScene(0);
+      window.sceneReady = true;
+    </script>
+  </body>
+</html>

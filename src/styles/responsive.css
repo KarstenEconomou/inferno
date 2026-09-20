@@ -1,0 +1,138 @@
+/* Narrow and short windows. Every rule here follows the base rules, so a
+   breakpoint always wins over the value that it replaces. The columns fold in
+   the order that the player reads them, and the cursor follows the fold,
+   because it is chosen from what is on the screen rather than from a list. */
+@media (max-width: 1100px) {
+  .tracks-body {
+    grid-template-columns: minmax(180px, 32%) minmax(0, 1fr);
+  }
+  .track-graphic {
+    display: none;
+  }
+  .records-body {
+    gap: 24px;
+  }
+}
+@media (max-width: 860px) {
+  .title-body {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+  }
+  .title-side {
+    border-left: 0;
+    border-top: 2px solid var(--structure);
+    padding: 12px 0 0;
+    max-width: 380px;
+  }
+  .hero h1 {
+    font-size: 15vw;
+  }
+  .records-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .card-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  .card-columns .block + .block {
+    margin-top: 14px;
+  }
+}
+@media (max-width: 760px) {
+  .track-copy h1 {
+    font-size: clamp(34px, 9vw, 62px);
+  }
+  .panel-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pause-state {
+    border-left: 0;
+    border-top: 2px solid var(--structure);
+    padding: 12px 0 0;
+  }
+  .result-headline {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+}
+@media (max-width: 560px) {
+  /* Below this width the sheet has no room beside the list, so the two fold
+     into one column and the cursor runs straight down both. */
+  .tracks-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .circuit-selector {
+    border-right: 0;
+    border-bottom: 2px solid var(--structure);
+    padding: 0 0 12px;
+  }
+  .binding-head,
+  .binding-row {
+    grid-template-columns: minmax(0, 1fr) 76px 76px;
+  }
+  .panel h2 {
+    font-size: 38px;
+  }
+  .legend {
+    gap: 10px;
+    font-size: 10px;
+  }
+  th,
+  td {
+    padding: 6px 4px;
+    font-size: var(--data-small);
+  }
+}
+@media (max-height: 700px) {
+  .hero h1 {
+    font-size: min(15vh, 13vw);
+    margin: 8px 0;
+  }
+  .track-copy h1 {
+    font-size: min(9vh, 5vw);
+  }
+  .panel h2 {
+    font-size: 34px;
+  }
+  .panel {
+    padding: 12px 18px;
+  }
+  .settings-content {
+    max-height: 38vh;
+  }
+  .circuit-option {
+    min-height: 32px;
+    padding: 4px 8px;
+  }
+  .circuit-option strong {
+    font-size: 14px;
+  }
+  /* A short window buys the sheet its last action back out of the spacing
+     between its blocks, not out of the size of the type. */
+  .chip {
+    font-size: 12px;
+    padding: 3px 7px;
+  }
+  .track-status {
+    margin-bottom: 8px;
+  }
+  .card-columns + .card-columns {
+    margin-top: 10px;
+  }
+  .track-action {
+    padding-top: 8px;
+  }
+  .menu-row {
+    min-height: 36px;
+    font-size: 17px;
+    padding: 7px 12px;
+  }
+  .pause-map .course-map {
+    height: 84px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+  }
+}

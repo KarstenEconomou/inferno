@@ -1,0 +1,24 @@
+{
+  "early acceleration": {
+    "rms_db": -30.77,
+    "dominant_hz": 51.67,
+    "centroid_hz": 59.68
+  },
+  "hold": {
+    "rms_db": -32.45,
+    "dominant_hz": 207.5,
+    "centroid_hz": 196.0,
+    "7_36Hz_envelope_energy_to_DC_db": -36.35
+  },
+  "coast": {
+    "rms_db": -50.16,
+    "dominant_hz": 207.5,
+    "centroid_hz": 194.09
+  },
+  "airborne": {
+    "rms_db": -52.15,
+    "dominant_hz": 208.0,
+    "centroid_hz": 205.46
+  },
+  "peak_db": -14.948431015014648
+}

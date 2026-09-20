@@ -1,0 +1,146 @@
+/* One type size across every readout; its label prints at half that size.
+   Scale and safe zone remain player settings. */
+#race-hud {
+  position: absolute;
+  inset: var(--safe);
+  font-size: calc(clamp(20px, 2.2vw, 26px) * var(--hud-scale));
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+/* With no panel under it, the display is read against the road itself. The
+   city is drawn in structure ink, so the display prints in signal and keeps
+   structure for the things that mean something: the sector being driven, a
+   split behind the reference, and reverse. */
+#race-hud .hud-key {
+  font-family: var(--label);
+  font-size: 0.42em;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  color: var(--signal);
+  display: flex;
+  gap: 0.5em;
+}
+#race-hud .hud-key b {
+  color: var(--signal);
+  font-family: var(--data);
+  font-weight: 400;
+}
+.hud-off > * {
+  visibility: hidden;
+}
+/* Each corner is its own containing box, so the clock changing every frame
+   cannot make the browser lay out the rest of the race view again. Nothing
+   frames a corner and nothing sits on a panel: every readout is printed
+   straight onto the road, in the inks the road is already drawn with. */
+.timing,
+.run-state,
+.speedometer {
+  position: absolute;
+  padding: 0.3em 0.5em;
+  contain: layout style paint;
+}
+.timing {
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+.timing:has(> .hidden:first-child):has(> .hidden:last-child) {
+  display: none;
+}
+.hud-line {
+  display: flex;
+  flex-direction: column;
+}
+#split-notice {
+  white-space: nowrap;
+}
+#split-notice.ahead {
+  color: var(--signal);
+}
+#split-notice.behind {
+  color: var(--structure);
+}
+.run-state {
+  bottom: 0;
+  left: 0;
+  width: 9.4em;
+}
+/* The corner reads downwards: which circuit, where the car is on it, and how
+   much of it is behind. */
+.hud-course {
+  display: block;
+  font-family: var(--label);
+  font-size: 0.46em;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+.hud-map {
+  display: block;
+  width: 100%;
+  height: 5.2em;
+  margin: 0.15em 0 0.3em;
+}
+.sector {
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
+  height: 1.1em;
+  margin-top: 0.15em;
+}
+.sector span {
+  flex: 1;
+  height: 0.3em;
+  border: 1px solid var(--signal);
+}
+.sector .current {
+  background: var(--structure);
+  border-color: var(--structure);
+  height: 0.5em;
+}
+.sector .done {
+  background: var(--signal);
+  border-color: var(--signal);
+}
+.speedometer {
+  bottom: 0;
+  right: 0;
+  text-align: right;
+}
+/* The strip above the digits reads as one glance: how much of the car's
+   range is in use. It carries no text, so it adds no reading to the road. */
+.speed-strip {
+  display: flex;
+  gap: 0.1em;
+  justify-content: flex-end;
+  margin-bottom: 0.18em;
+}
+.speed-strip i {
+  width: 0.34em;
+  height: 0.28em;
+  border: 1px solid var(--signal);
+}
+.speed-strip i.on {
+  background: var(--signal);
+  border-color: var(--signal);
+}
+.speed-readout {
+  display: flex;
+  gap: 0.35em;
+  align-items: baseline;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+.speed-unit {
+  color: var(--signal);
+}
+#direction:empty {
+  display: none;
+}
+#direction {
+  color: var(--structure);
+}

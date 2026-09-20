@@ -1,0 +1,6 @@
+dist/
+test-results/
+package-lock.json
+public/audio/
+tools/audio/sources/
+docs/audio/

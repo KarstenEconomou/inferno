@@ -1,0 +1,151 @@
+/* The options book. One page at a time, the pages turned by the shoulder
+   buttons, the cursor running down the rows of the open page, and a help line
+   under the rows that explains whatever the cursor holds. */
+.settings-panel {
+  width: min(700px, 95vw);
+}
+.page-count {
+  font-size: var(--data-small);
+  letter-spacing: 0.1em;
+  color: var(--structure);
+}
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: var(--rule);
+  padding-bottom: 9px;
+}
+.tab-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex: 1;
+}
+/* A page of the book is chosen the way any other row of the interface is
+   chosen: a registration edge in structure ink, inverted to field when the
+   cursor stands on it. */
+.tabs button {
+  padding: 6px 9px;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+.page-cue {
+  gap: 0;
+}
+.settings-content {
+  max-height: 46vh;
+  overflow: auto;
+  padding: 2px 4px 2px 0;
+}
+.setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  min-height: 34px;
+  padding: 3px 4px;
+  border-bottom: 1px dotted var(--structure);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+/* The row under the cursor is marked with an edge of structure ink, not with
+   a screened wash of the signal. Three inks, printed flat, and nothing in
+   between them. */
+.setting:focus-within {
+  box-shadow: inset 4px 0 0 var(--structure);
+}
+.setting-name {
+  flex: 1;
+}
+.setting-value {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+/* The horizontal prompts of a console options row appear on the row that the
+   cursor holds, because that is the row the arrows will change. */
+.setting-value::before,
+.setting-value::after {
+  content: "";
+  font-size: 11px;
+  color: var(--structure);
+  width: 8px;
+}
+.setting:focus-within .setting-value::before {
+  content: "\25c2";
+}
+.setting:focus-within .setting-value::after {
+  content: "\25b8";
+}
+.setting .state {
+  min-width: 50px;
+  text-align: right;
+  font-size: var(--data-size);
+  font-weight: 400;
+}
+
+/* Bindings: one row for each action, the key beside the button, so a
+   horizontal press crosses between the two and a vertical press runs down
+   the same column. */
+.binding-table {
+  display: grid;
+  gap: 3px;
+}
+.binding-head,
+.binding-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 104px 104px;
+  align-items: center;
+  gap: 6px;
+}
+.binding-head {
+  font-size: 10px;
+  color: var(--structure);
+  border-bottom: var(--rule);
+  padding-bottom: 4px;
+  margin-bottom: 3px;
+}
+.binding-head span + span,
+.binding-row button {
+  text-align: center;
+}
+.binding-name {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.binding {
+  font-size: var(--data-mid);
+  padding: 6px 4px;
+  border-left-width: 1px;
+  letter-spacing: 0.05em;
+}
+
+/* Data tables: records, sector comparisons and the result sheet. */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--data-size);
+  text-align: right;
+}
+th,
+td {
+  padding: 8px 8px;
+  border-bottom: var(--rule);
+  white-space: nowrap;
+}
+th:first-child,
+td:first-child {
+  text-align: left;
+}
+tr.empty {
+  color: var(--structure);
+}
+th {
+  font-family: var(--label);
+  letter-spacing: 0.13em;
+  color: var(--structure);
+  font-weight: 600;
+}

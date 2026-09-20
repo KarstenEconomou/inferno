@@ -1,0 +1,1672 @@
+{
+  "states": {
+    "low": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 155.53785705566406,
+        "brake": 92.48578643798828,
+        "scrape": 138.565673828125,
+        "whine": 1086.4122314453125,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.029449550434947014,
+        "harmonic": 0.03939441591501236,
+        "overtone": 0.0024341235402971506,
+        "upper": 0,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.0016682075802236795,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 110.00823974609375,
+        "harmonic": 687.44091796875,
+        "overtone": 790.5471801757812,
+        "upper": 893.6534423828125,
+        "air": 2959.736328125,
+        "tire": 420.032958984375,
+        "brake": 301.4615173339844,
+        "scrape": 478.6044006347656,
+        "whine": 3800.263671875,
+        "bed": 130,
+        "ambientAir": 620.06591796875
+      },
+      "layerDrives": {
+        "harmonic": 1.669871211051941,
+        "overtone": 1.669871211051941,
+        "upper": 1.669871211051941
+      },
+      "drivetrain": {
+        "register": 0.15625,
+        "body": 0.029451562499999997,
+        "harmonic": 0.039398437499999994,
+        "overtone": 0.0024343749999999995,
+        "upper": 0,
+        "cutoff": 687.375,
+        "drive": 1.67
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.038037680089473724,
+      "masterDb": -28.395719569216027,
+      "transport": {
+        "beats": 2.599822222222222,
+        "bar": 0,
+        "phase": 0.6499555555555555
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 20,
+        "rpm": 1819.2388155425117,
+        "load": 1,
+        "throttle": 1,
+        "coupling": 1,
+        "slip": 0,
+        "body": 0.054,
+        "harmonic": 0.031,
+        "air": 0.0031234688739145374,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 0.7333333333333334
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "high": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 155.53785705566406,
+        "brake": 123.4580078125,
+        "scrape": 155.53785705566406,
+        "whine": 1375.288818359375,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "upper",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.02379201166331768,
+        "harmonic": 0.030752012506127357,
+        "overtone": 0.015578994527459145,
+        "upper": 0.0032797486055642366,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.00027303144452162087,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 110.00823974609375,
+        "harmonic": 899.93408203125,
+        "overtone": 1034.8681640625,
+        "upper": 1169.8681640625,
+        "air": 5839.47265625,
+        "tire": 420.032958984375,
+        "brake": 479.967041015625,
+        "scrape": 799.93408203125,
+        "whine": 3800.263671875,
+        "bed": 130,
+        "ambientAir": 620.06591796875
+      },
+      "layerDrives": {
+        "harmonic": 1.669871211051941,
+        "overtone": 1.669871211051941,
+        "upper": 1.669871211051941
+      },
+      "drivetrain": {
+        "register": 1,
+        "body": 0.02379,
+        "harmonic": 0.030749999999999996,
+        "overtone": 0.015579999999999998,
+        "upper": 0.0032799999999999995,
+        "cutoff": 900,
+        "drive": 1.67
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.041408371180295944,
+      "masterDb": -27.658237047195627,
+      "transport": {
+        "beats": 9.989688888888889,
+        "bar": 2,
+        "phase": 0.4974222222222222
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 80,
+        "rpm": 3022.891110412088,
+        "load": 1,
+        "throttle": 1,
+        "coupling": 1,
+        "slip": 0,
+        "body": 0.054,
+        "harmonic": 0.031,
+        "air": 0.03076353003501295,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 0.12
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "boost": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 155.53785705566406,
+        "brake": 123.4580078125,
+        "scrape": 155.53785705566406,
+        "whine": 1375.288818359375,
+        "bed": 51.90667724609375
+      },
+      "voices": 1,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "upper"
+      ],
+      "layerLevels": {
+        "body": 0.02379201166331768,
+        "harmonic": 0.030752012506127357,
+        "overtone": 0.015578994527459145,
+        "upper": 0.0032797486055642366,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.0001501657097833231,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 110.00823974609375,
+        "harmonic": 899.93408203125,
+        "overtone": 1034.8681640625,
+        "upper": 1169.8681640625,
+        "air": 5839.47265625,
+        "tire": 420.032958984375,
+        "brake": 479.967041015625,
+        "scrape": 799.93408203125,
+        "whine": 3800.263671875,
+        "bed": 130,
+        "ambientAir": 620.06591796875
+      },
+      "layerDrives": {
+        "harmonic": 1.669871211051941,
+        "overtone": 1.669871211051941,
+        "upper": 1.669871211051941
+      },
+      "drivetrain": {
+        "register": 1,
+        "body": 0.02379,
+        "harmonic": 0.030749999999999996,
+        "overtone": 0.015579999999999998,
+        "upper": 0.0032799999999999995,
+        "cutoff": 900,
+        "drive": 1.67
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [
+        "vehicle.boost.enter"
+      ],
+      "voiceVariants": [
+        {
+          "event": "vehicle.boost.enter",
+          "variant": 0
+        }
+      ],
+      "maxVoices": 16,
+      "masterPeak": 0.020988553762435913,
+      "masterDb": -33.56034971775914,
+      "transport": {
+        "beats": 11.593955555555556,
+        "bar": 2,
+        "phase": 0.8984888888888891
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 80,
+        "rpm": 3022.891110412088,
+        "load": 1,
+        "throttle": 1,
+        "coupling": 1,
+        "slip": 0,
+        "body": 0.054,
+        "harmonic": 0.031,
+        "air": 0.03076353003501295,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 0.066
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "release": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 155.53785705566406,
+        "brake": 123.4580078125,
+        "scrape": 155.53785705566406,
+        "whine": 1375.288818359375,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "upper",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.02379201166331768,
+        "harmonic": 0.030752012506127357,
+        "overtone": 0.015578994527459145,
+        "upper": 0.0032797486055642366,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.0002729685802478343,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 110.00823974609375,
+        "harmonic": 899.93408203125,
+        "overtone": 1034.8681640625,
+        "upper": 1169.8681640625,
+        "air": 5839.47265625,
+        "tire": 420.032958984375,
+        "brake": 479.967041015625,
+        "scrape": 799.93408203125,
+        "whine": 3800.263671875,
+        "bed": 130,
+        "ambientAir": 620.06591796875
+      },
+      "layerDrives": {
+        "harmonic": 1.669871211051941,
+        "overtone": 1.669871211051941,
+        "upper": 1.669871211051941
+      },
+      "drivetrain": {
+        "register": 1,
+        "body": 0.02379,
+        "harmonic": 0.030749999999999996,
+        "overtone": 0.015579999999999998,
+        "upper": 0.0032799999999999995,
+        "cutoff": 900,
+        "drive": 1.67
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.04657397419214249,
+      "masterDb": -26.637134036244984,
+      "transport": {
+        "beats": 13.835377777777778,
+        "bar": 3,
+        "phase": 0.4588444444444444
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 80,
+        "rpm": 3022.891110412088,
+        "load": 1,
+        "throttle": 1,
+        "coupling": 1,
+        "slip": 0,
+        "body": 0.054,
+        "harmonic": 0.031,
+        "air": 0.03076353003501295,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 0.12
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1,
+        "vehicle.boost.exit": 1
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        },
+        {
+          "event": "vehicle.boost.exit",
+          "time": 5.584
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "brake": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 155.53785705566406,
+        "brake": 103.8389892578125,
+        "scrape": 138.616943359375,
+        "whine": 1181.4383544921875,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "brake",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.0031865600030869246,
+        "harmonic": 0.004589888732880354,
+        "overtone": 0.0007898672483861446,
+        "upper": 0,
+        "air": 0,
+        "tire": 0,
+        "brake": 0.047600001096725464,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.001213207608088851,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 85.00823974609375,
+        "harmonic": 210.5145263671875,
+        "overtone": 242.0892333984375,
+        "upper": 273.680419921875,
+        "air": 3680.263671875,
+        "tire": 420.032958984375,
+        "brake": 355.032958984375,
+        "scrape": 575.06591796875,
+        "whine": 3800.263671875,
+        "bed": 130,
+        "ambientAir": 620.06591796875
+      },
+      "layerDrives": {
+        "harmonic": 1.050128698348999,
+        "overtone": 1.050128698348999,
+        "upper": 1.050128698348999
+      },
+      "drivetrain": {
+        "register": 0.40673828125,
+        "body": 0.0031868115234375003,
+        "harmonic": 0.004590391845703125,
+        "overtone": 0.0007898043945312501,
+        "upper": 0,
+        "cutoff": 210.498046875,
+        "drive": 1.05
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.04513460025191307,
+      "masterDb": -26.909807992923632,
+      "transport": {
+        "beats": 16.054044444444443,
+        "bar": 4,
+        "phase": 0.013511111111110807
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 35,
+        "rpm": 2213.471862406399,
+        "load": 0,
+        "throttle": 0,
+        "coupling": 1,
+        "slip": 0,
+        "body": 0.026,
+        "harmonic": 0.006,
+        "air": 0.007864116938705196,
+        "tire": 0,
+        "brake": 0.14,
+        "scrape": 0,
+        "environment": 0.5333333333333333
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1,
+        "vehicle.boost.exit": 1
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        },
+        {
+          "event": "vehicle.boost.exit",
+          "time": 5.584
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "drive": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 155.53785705566406,
+        "brake": 123.4580078125,
+        "scrape": 155.53785705566406,
+        "whine": 1279.7586669921875,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "upper",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.024407221004366875,
+        "harmonic": 0.03169190138578415,
+        "overtone": 0.014141191728413105,
+        "upper": 0.0030064948368817568,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.0003033647662959993,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 109.99176025390625,
+        "harmonic": 876.810302734375,
+        "overtone": 1008.3219604492188,
+        "upper": 1139.8995361328125,
+        "air": 5119.47265625,
+        "tire": 420.032958984375,
+        "brake": 462.1098937988281,
+        "scrape": 767.7911987304688,
+        "whine": 3800.263671875,
+        "bed": 130,
+        "ambientAir": 620.06591796875
+      },
+      "layerDrives": {
+        "harmonic": 1.669871211051941,
+        "overtone": 1.669871211051941,
+        "upper": 1.669871211051941
+      },
+      "drivetrain": {
+        "register": 0.90771484375,
+        "body": 0.0244092333984375,
+        "harmonic": 0.031695922851562496,
+        "overtone": 0.014142197265625,
+        "upper": 0.0030067463885285434,
+        "cutoff": 876.744140625,
+        "drive": 1.67
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.024142121896147728,
+      "masterDb": -32.344491232172274,
+      "transport": {
+        "beats": 17.976888888888887,
+        "bar": 4,
+        "phase": 0.4942222222222217
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 65,
+        "rpm": 2624.8490272098215,
+        "load": 1,
+        "throttle": 1,
+        "coupling": 1,
+        "slip": 0,
+        "body": 0.054,
+        "harmonic": 0.031,
+        "air": 0.021839602425162644,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 0.1333333333333333
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1,
+        "vehicle.boost.exit": 1
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        },
+        {
+          "event": "vehicle.boost.exit",
+          "time": 5.584
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "drift": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 184.97157287597656,
+        "brake": 123.4580078125,
+        "scrape": 155.53785705566406,
+        "whine": 1261.0628662109375,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "upper",
+        "tire",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.022952692583203316,
+        "harmonic": 0.03024987503886223,
+        "overtone": 0.01349710300564766,
+        "upper": 0.002869631629437208,
+        "air": 0,
+        "tire": 0.0217497106641531,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.0003033647662959993,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 108.32073974609375,
+        "harmonic": 866.68505859375,
+        "overtone": 996.6779174804688,
+        "upper": 1126.7366943359375,
+        "air": 5119.47265625,
+        "tire": 680.93408203125,
+        "brake": 462.1098937988281,
+        "scrape": 767.7911987304688,
+        "whine": 3800.263671875,
+        "bed": 130,
+        "ambientAir": 620.06591796875
+      },
+      "layerDrives": {
+        "harmonic": 1.6417787075042725,
+        "overtone": 1.6417787075042725,
+        "upper": 1.6417787075042725
+      },
+      "drivetrain": {
+        "register": 0.90771484375,
+        "body": 0.02295068166503906,
+        "harmonic": 0.030247863693237297,
+        "overtone": 0.013496097186279293,
+        "upper": 0.002869380246357506,
+        "cutoff": 866.619140625,
+        "drive": 1.64165
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.030386334285140038,
+      "masterDb": -30.346433774484755,
+      "transport": {
+        "beats": 20.764444444444443,
+        "bar": 5,
+        "phase": 0.1911111111111108
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 65,
+        "rpm": 2545.240610569368,
+        "load": 0.9325,
+        "throttle": 1,
+        "coupling": 1,
+        "slip": 0.45,
+        "body": 0.052110000000000004,
+        "harmonic": 0.0293125,
+        "air": 0.021839602425162644,
+        "tire": 0.051789816325529765,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 0.1333333333333333
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1,
+        "vehicle.boost.exit": 1
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        },
+        {
+          "event": "vehicle.boost.exit",
+          "time": 5.584
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "recovery": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 155.58912658691406,
+        "brake": 123.4580078125,
+        "scrape": 155.53785705566406,
+        "whine": 1261.0628662109375,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "upper",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.024407221004366875,
+        "harmonic": 0.03169190138578415,
+        "overtone": 0.014141191728413105,
+        "upper": 0.0030064948368817568,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.0003033647662959993,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 109.99176025390625,
+        "harmonic": 876.67822265625,
+        "overtone": 1008.1898193359375,
+        "upper": 1139.635498046875,
+        "air": 5119.47265625,
+        "tire": 420.032958984375,
+        "brake": 462.1098937988281,
+        "scrape": 767.7911987304688,
+        "whine": 3800.263671875,
+        "bed": 130,
+        "ambientAir": 620.06591796875
+      },
+      "layerDrives": {
+        "harmonic": 1.669871211051941,
+        "overtone": 1.669871211051941,
+        "upper": 1.669871211051941
+      },
+      "drivetrain": {
+        "register": 0.90771484375,
+        "body": 0.0244092333984375,
+        "harmonic": 0.031695922851562496,
+        "overtone": 0.014142197265625,
+        "upper": 0.0030067463885285434,
+        "cutoff": 876.744140625,
+        "drive": 1.67
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.02318396046757698,
+      "masterDb": -32.696247448299815,
+      "transport": {
+        "beats": 23.39271111111111,
+        "bar": 5,
+        "phase": 0.8481777777777779
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 65,
+        "rpm": 2545.240610569368,
+        "load": 1,
+        "throttle": 1,
+        "coupling": 1,
+        "slip": 0,
+        "body": 0.054,
+        "harmonic": 0.031,
+        "air": 0.021839602425162644,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 0.1333333333333333
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1,
+        "vehicle.boost.exit": 1
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        },
+        {
+          "event": "vehicle.boost.exit",
+          "time": 5.584
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "scrape": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 155.58912658691406,
+        "brake": 103.8389892578125,
+        "scrape": 138.616943359375,
+        "whine": 1162.6051025390625,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "scrape",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.003114999970421195,
+        "harmonic": 0.0044710347428917885,
+        "overtone": 0.0009708550060167909,
+        "upper": 0.0000017676014749667956,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0.01889909990131855,
+        "whine": 0,
+        "bed": 0.0010616666404530406,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 85,
+        "harmonic": 234.0164794921875,
+        "overtone": 269.1329650878906,
+        "upper": 304.23297119140625,
+        "air": 3920,
+        "tire": 420,
+        "brake": 372.8571472167969,
+        "scrape": 607.1428833007812,
+        "whine": 3800,
+        "bed": 130,
+        "ambientAir": 620
+      },
+      "layerDrives": {
+        "harmonic": 1.050128698348999,
+        "overtone": 1.050128698348999,
+        "upper": 1.050128698348999
+      },
+      "drivetrain": {
+        "register": 0.5,
+        "body": 0.003115,
+        "harmonic": 0.0044712499999999995,
+        "overtone": 0.0009709,
+        "upper": 0.0000017676832043695976,
+        "cutoff": 234,
+        "drive": 1.05
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.020207159221172333,
+      "masterDb": -33.889894730471774,
+      "transport": {
+        "beats": 30.56071111111111,
+        "bar": 7,
+        "phase": 0.6401777777777777
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 40,
+        "rpm": 2135,
+        "load": 0,
+        "throttle": 0,
+        "coupling": 1,
+        "slip": 0,
+        "body": 0.026,
+        "harmonic": 0.006,
+        "air": 0.009802496034995268,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0.042,
+        "environment": 0.4666666666666667
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1,
+        "vehicle.boost.exit": 1,
+        "vehicle.impact": 4
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        },
+        {
+          "event": "vehicle.boost.exit",
+          "time": 5.584
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 11.114666666666666
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 11.866666666666667
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 12.618666666666666
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 13.221333333333334
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "stopped": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 207.626708984375,
+        "brake": 77.79456329345703,
+        "scrape": 123.483642578125,
+        "whine": 866.1025390625,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.0034997486509382725,
+        "harmonic": 0.005109496880322695,
+        "overtone": 0,
+        "upper": 0,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.0022747486364096403,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 85,
+        "harmonic": 59.40412139892578,
+        "overtone": 68.3182373046875,
+        "upper": 77.22824096679688,
+        "air": 2000.1318359375,
+        "tire": 999.93408203125,
+        "brake": 230.0164794921875,
+        "scrape": 350.032958984375,
+        "whine": 3800,
+        "bed": 130,
+        "ambientAir": 620
+      },
+      "layerDrives": {
+        "harmonic": 1.050128698348999,
+        "overtone": 1.050128698348999,
+        "upper": 1.050128698348999
+      },
+      "drivetrain": {
+        "register": 0,
+        "body": 0.0035,
+        "harmonic": 0.00511,
+        "overtone": 0,
+        "upper": 0,
+        "cutoff": 59.400000000000006,
+        "drive": 1.05
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.004303256049752235,
+      "masterDb": -47.32405624039344,
+      "transport": {
+        "beats": 31.846400000000003,
+        "bar": 7,
+        "phase": 0.9616000000000007
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 0,
+        "rpm": 900,
+        "load": 0,
+        "throttle": 0,
+        "coupling": 1,
+        "slip": 1,
+        "body": 0.026,
+        "harmonic": 0.006,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 1
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1,
+        "vehicle.boost.exit": 1,
+        "vehicle.impact": 4
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        },
+        {
+          "event": "vehicle.boost.exit",
+          "time": 5.584
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 11.114666666666666
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 11.866666666666667
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 12.618666666666666
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 13.221333333333334
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "air": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 207.626708984375,
+        "brake": 123.4580078125,
+        "scrape": 155.53785705566406,
+        "whine": 1279.7586669921875,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "body",
+        "harmonic",
+        "overtone",
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0.0006723171682097018,
+        "harmonic": 0.0011062361299991608,
+        "overtone": 0.0004934653406962752,
+        "upper": 0.00010492025467101485,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.0003033647662959993,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 85,
+        "harmonic": 336.711181640625,
+        "overtone": 387.2228088378906,
+        "upper": 437.73443603515625,
+        "air": 5119.47265625,
+        "tire": 999.93408203125,
+        "brake": 462.1098937988281,
+        "scrape": 767.7911987304688,
+        "whine": 3800,
+        "bed": 130,
+        "ambientAir": 620
+      },
+      "layerDrives": {
+        "harmonic": 1.050128698348999,
+        "overtone": 1.050128698348999,
+        "upper": 1.050128698348999
+      },
+      "drivetrain": {
+        "register": 0.90771484375,
+        "body": 0.000672254296875,
+        "harmonic": 0.0011061104003906252,
+        "overtone": 0.00049352819140625,
+        "upper": 0.00010492811543186929,
+        "cutoff": 336.744140625,
+        "drive": 1.05
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 0.0005422509275376797,
+      "masterDb": -65.31599392876865,
+      "transport": {
+        "beats": 33.13208888888889,
+        "bar": 8,
+        "phase": 0.28302222222222184
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 65,
+        "rpm": 2624.8490272098215,
+        "load": 0,
+        "throttle": 0,
+        "coupling": 0.24,
+        "slip": 1,
+        "body": 0.00624,
+        "harmonic": 0.006,
+        "air": 0.02948346327396957,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 0.1333333333333333
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1,
+        "vehicle.boost.exit": 1,
+        "vehicle.impact": 4
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        },
+        {
+          "event": "vehicle.boost.exit",
+          "time": 5.584
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 11.114666666666666
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 11.866666666666667
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 12.618666666666666
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 13.221333333333334
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    },
+    "reset": {
+      "ready": true,
+      "context": "running",
+      "theme": "vertigo",
+      "harmony": "G♯ minor",
+      "tonalLayers": {
+        "body": 25.959747314453125,
+        "harmonic": 51.90667724609375,
+        "overtone": 103.8133544921875,
+        "upper": 207.626708984375,
+        "tire": 159.18212890625,
+        "brake": 80.9564208984375,
+        "scrape": 125.69967651367188,
+        "whine": 894.7579956054688,
+        "bed": 51.90667724609375
+      },
+      "voices": 0,
+      "continuousLayers": [
+        "bed"
+      ],
+      "layerLevels": {
+        "body": 0,
+        "harmonic": 0,
+        "overtone": 0,
+        "upper": 0,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "whine": 0,
+        "bed": 0.0010747447377070785,
+        "ambientAir": 0
+      },
+      "layerFilters": {
+        "body": 85,
+        "harmonic": 111.61381530761719,
+        "overtone": 128.35609436035156,
+        "upper": 145.09815979003906,
+        "air": 2049.289794921875,
+        "tire": 429.1636047363281,
+        "brake": 233.66758728027344,
+        "scrape": 356.6014404296875,
+        "whine": 3800,
+        "bed": 130,
+        "ambientAir": 620
+      },
+      "layerDrives": {
+        "harmonic": 1.050128698348999,
+        "overtone": 1.050128698348999,
+        "upper": 1.050128698348999
+      },
+      "drivetrain": {
+        "register": 0,
+        "body": 0.0035,
+        "harmonic": 0.00511,
+        "overtone": 0,
+        "upper": 0,
+        "cutoff": 108,
+        "drive": 1.05
+      },
+      "allocatedContinuous": 14,
+      "paused": false,
+      "worldGain": 1,
+      "voiceEvents": [],
+      "voiceVariants": [],
+      "maxVoices": 16,
+      "masterPeak": 3.917960400556808e-10,
+      "masterDb": -188.13879915603735,
+      "transport": {
+        "beats": 33.56444444444444,
+        "bar": 8,
+        "phase": 0.3911111111111101
+      },
+      "baseLatency": 0.005333333333333333,
+      "outputLatency": 0.008,
+      "params": {
+        "speed": 0,
+        "rpm": 900,
+        "load": 0,
+        "throttle": 0,
+        "coupling": 1,
+        "slip": 0,
+        "body": 0.026,
+        "harmonic": 0.006,
+        "air": 0,
+        "tire": 0,
+        "brake": 0,
+        "scrape": 0,
+        "environment": 1
+      },
+      "mix": {
+        "master": 0.65,
+        "music": 0.7,
+        "vehicle": 0.8,
+        "sfx": 0.8,
+        "ambience": 0.45
+      },
+      "muted": false,
+      "mutes": [
+        "music",
+        "environment",
+        "ui"
+      ],
+      "solo": null,
+      "events": {
+        "race.start": 1,
+        "vehicle.boost.enter": 1,
+        "vehicle.boost.exit": 1,
+        "vehicle.impact": 4
+      },
+      "recent": [
+        {
+          "event": "race.start",
+          "time": 0.016
+        },
+        {
+          "event": "vehicle.boost.enter",
+          "time": 4.682666666666667
+        },
+        {
+          "event": "vehicle.boost.exit",
+          "time": 5.584
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 11.114666666666666
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 11.866666666666667
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 12.618666666666666
+        },
+        {
+          "event": "vehicle.impact",
+          "time": 13.221333333333334
+        }
+      ],
+      "fault": "",
+      "anchors": 3
+    }
+  },
+  "cues": [
+    {
+      "event": "low engine / 72 km/h",
+      "seconds": 0.00010000014305114746
+    },
+    {
+      "event": "accelerate",
+      "seconds": 1.2015
+    },
+    {
+      "event": "high engine / 288 km/h",
+      "seconds": 3.263600000143051
+    },
+    {
+      "event": "boost / long synth decay",
+      "seconds": 4.664400000095368
+    },
+    {
+      "event": "boost release",
+      "seconds": 5.565900000095367
+    },
+    {
+      "event": "straight braking",
+      "seconds": 6.467200000047684
+    },
+    {
+      "event": "brake release / engine resumes",
+      "seconds": 7.507100000143051
+    },
+    {
+      "event": "powered drift / engine and slide synth together",
+      "seconds": 8.4105
+    },
+    {
+      "event": "drift recovery",
+      "seconds": 9.713400000095367
+    },
+    {
+      "event": "collision synth / 0.2",
+      "seconds": 10.947700000047684
+    },
+    {
+      "event": "collision synth / 0.5",
+      "seconds": 11.69860000014305
+    },
+    {
+      "event": "collision synth / 1",
+      "seconds": 12.450600000143051
+    },
+    {
+      "event": "glancing contact / sustained tonal rasp",
+      "seconds": 13.204700000047684
+    },
+    {
+      "event": "stopped / brake held",
+      "seconds": 14.306900000095368
+    },
+    {
+      "event": "airborne / brake held",
+      "seconds": 14.910100000143052
+    },
+    {
+      "event": "reset",
+      "seconds": 15.513300000190736
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+/* Results open only on the player's explicit request. */
+.results-panel {
+  width: min(760px, 95vw);
+}
+.result-headline {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+}
+.result-time {
+  font-size: clamp(34px, 4.4vw, 64px);
+  letter-spacing: -2px;
+  line-height: 1;
+}
+.result-compare {
+  min-width: 0;
+}
+/* One column, like every other menu, so the vertical arrows reach both
+   plates and the command bar can promise that they will. */
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 300px;
+}
+.result-actions .menu-row {
+  margin-bottom: 0;
+}
+
+/* Pause: the actions on the left, the state of the held run on the right. */
+.pause-panel {
+  width: min(700px, 94vw);
+}
+.panel-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 0.8fr);
+  gap: clamp(14px, 2.4vw, 30px);
+  align-items: start;
+}
+.pause-state {
+  border-left: 2px solid var(--structure);
+  padding-left: clamp(12px, 1.6vw, 20px);
+}
+.pause-map {
+  margin-bottom: 12px;
+}
+.pause-map .course-map {
+  height: 108px;
+}
